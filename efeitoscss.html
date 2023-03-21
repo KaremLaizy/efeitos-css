@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>efeitos CSS</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+        }
+        .preta
+        {
+            width: 80%; /*largura*/
+            height: 80px;  /*altura*/
+            background-color: rgb(0, 0, 0);
+            color: white;
+            position: fixed; /*fica o menu caixa preta em cima*/
+            border-radius: 0px 0px 30px 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+            z-index: 1;
+        }
+        .menu1
+        {
+            width: 100px; /*largura*/
+            height: 300px;  /*altura*/
+            background-color: rgb(241, 245, 7);
+            position: absolute; /*para usar o z-index tem que ter o position*/
+            left: 275px;
+            top: -210px;
+            z-index: 0; /*comando de colocar por tras*/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+            font-family: Georgia;
+        }
+        .menu2
+        {
+            width: 100px; /*largura*/
+            height: 300px;  /*altura*/
+            background-color: rgb(241, 245, 7);
+            position: absolute; /*para usar o z-index tem que ter o position*/
+            left: 630px;
+            top: -210px;
+            z-index: 0; /*comando de colocar por tras*/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+            font-family: Georgia;
+        }
+        .menu3
+        {
+            width: 100px; /*largura*/
+            height: 300px;  /*altura*/
+            background-color: rgb(241, 245, 7);
+            position: absolute; /*para usar o z-index tem que ter o position*/
+            left: 1000px;
+            top: -210px;
+            z-index: 0; /*comando de colocar por tras*/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+            font-family: Georgia;
+        }
+        .opcao:hover
+        {
+            color: yellow;
+        }
+        .deslizar
+        {
+            animation: descer 5s forwards;
+        }
+        @keyframes descer 
+        {
+          0% {top: -208px}
+          100% {top: 80px;} 
+        }
+    </style>
+</head>
+<body>
+   <div class= "preta">
+        <div onclick="AnimaMenu1();"   class="opcao">MENU 1   </div>
+        <div onclick="AnimaMenu2();"   class="opcao">MENU 2   </div>
+        <div onclick="AnimaMenu3();"   class="opcao">MENU 3   </div>
+   </div>
+
+   <div class= "menu1" id="menu1">
+        <div class="opcao">FUSCA    </div>
+        <div class="opcao">KOMBI    </div>
+        <div class="opcao">CARROÇA  </div>
+        <div class="opcao">GOL      </div>
+        <div class="opcao">FERRARI  </div>
+        <div class="opcao">BRASÍLIA </div>  
+    </div>
+   
+    <div class= "menu2" id="menu2">
+        <div class="opcao">TEXTO 1  </div>
+        <div class="opcao">TEXTO 2  </div>
+        <div class="opcao">TEXTO 3  </div>
+        <div class="opcao">TEXTO 4  </div>
+        <div class="opcao">TEXTO 5  </div>
+        <div class="opcao">TEXTO 6 </div>  
+    </div>
+
+    <div class= "menu3" id="menu3">
+        <div class="opcao">TEXTO 1  </div>
+        <div class="opcao">TEXTO 2  </div>
+        <div class="opcao">TEXTO 3  </div>
+        <div class="opcao">TEXTO 4  </div>
+        <div class="opcao">TEXTO 5  </div>
+        <div class="opcao">TEXTO 6 </div>  
+    </div>
+</body>
+    <script> /*local para animação*/
+        function AnimaMenu1()
+        {
+            menu1.classList.add("deslizar");
+            menu2.classList.remove("deslizar");
+            menu3.classList.remove("deslizar");
+        }
+        function AnimaMenu2()
+        {
+            menu1.classList.remove("deslizar");
+            menu2.classList.add("deslizar");
+            menu3.classList.remove("deslizar");
+        }
+        function AnimaMenu3()
+        {
+            menu1.classList.remove("deslizar");
+            menu2.classList.remove("deslizar");
+            menu3.classList.add("deslizar");
+        }
+
+    </script>
+</html>
